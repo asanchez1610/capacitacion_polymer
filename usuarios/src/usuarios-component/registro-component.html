@@ -1,0 +1,44 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../bower_components/granite-bootstrap/granite-bootstrap.html">
+<link rel="import" href="../usuarios-styles/main-styles.html">
+<link rel="import" href="../usuarios-provider/api-provider.html">
+<dom-module id="registro-component">
+  <template>
+    	  <style include = "granite-bootstrap" ></style>
+        <style include = "main-styles" ></style>
+        <api-provider id = "apiProvider" ></api-provider> 
+
+         <div class="card border-default" style="width:100%; margin-bottom: 15px;">
+            <div class="card-header bg-info text-white" style="padding-top: 15px;padding-bottom: 15px;">Registro de Personas</div>
+            <div class="card-body">
+
+              <input type="hidden" value = "{{persona.id::input}}"  id="txtId" >
+
+              <div class="form-group">
+                <label for="txtNombre">Nombres</label>
+                <input type="text" value = "{{persona.nombres::input}}" class="form-control" id="txtNombre" >
+              
+              </div>
+
+                <div class="form-group">
+                <label for="txtEmail">Email</label>
+                <input type="text" value = "{{persona.email::input}}" class="form-control" id="txtEmail" >
+              
+              </div>
+
+                <div class="form-group">
+                <label for="txtTelefono">Teléfono</label>
+                <input type="text" value = "{{persona.telefono::input}}" class="form-control" id="txtTelefono" >
+              
+              </div>
+
+              <button type="button" class="btn btn-info btn-block" on-click="registrar">{{btntext}}</button>
+
+            </div>
+          </div>
+         
+  </template>
+
+  <script src = "usuarios-component-js/registro-usuarios.js"></script>
+
+</dom-module>

@@ -1,0 +1,68 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../bower_components/iron-ajax/iron-ajax.html">
+<dom-module id="api-provider">
+  <style>
+    :host {
+      display: none;
+    }
+  </style>
+  <template>
+
+  <iron-ajax
+              id = "listarPersonasRequest"
+              url="{{baseUrlApi}}/personas"
+              handle-as="json" >
+  </iron-ajax>
+
+  <iron-ajax
+              id = "registroPersonasRequest"
+              method = "POST"
+              url="{{baseUrlApi}}/personas"
+              handle-as="json" >
+  </iron-ajax>
+
+  <iron-ajax
+              id = "eliminarPersonasRequest"
+              method = "POST"
+              url="{{baseUrlApi}}/personas/{{idPersona}}"
+              handle-as="json" >
+  </iron-ajax>
+
+  </template>
+  
+    <script>
+    class ApiProvider extends Polymer.Element {
+      static get is() { return 'api-provider'; }
+
+      static get properties(){
+			return {
+					baseUrlApi : {
+						type  : String,
+						value : 'http://localhost/apis/persona/v1'
+					},
+          idPersona : {
+            type  : String,
+            value : '-1',
+            notify:true
+          }
+				}
+      }
+      
+      listarPersonasDoRequest(options){
+          return this.$.listarPersonasRequest.generateRequest().completes;
+      }
+
+      registroPersona(persona){
+          this.$.registroPersonasRequest.body = JSON.stringify(persona);
+          return this.$.registroPersonasRequest.generateRequest().completes;
+      }
+
+      eliminarPersona(){
+        return this.$.eliminarPersonasRequest.generateRequest().completes;
+      }
+      
+    }
+    window.customElements.define(ApiProvider.is, ApiProvider);
+  </script>
+  
+</dom-module>

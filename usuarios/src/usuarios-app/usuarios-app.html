@@ -1,0 +1,57 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../bower_components/granite-bootstrap/granite-bootstrap.html">
+<link rel="import" href="../usuarios-component/listado-component.html">
+<link rel="import" href="../usuarios-component/registro-component.html">
+<link rel="import" href="../usuarios-styles/main-styles.html">
+<dom-module id="usuarios-app">
+  <template>
+    <style include = "granite-bootstrap" ></style>
+    <style include = "main-styles" ></style>
+ 
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-12">
+   
+            <registro-component personas = {{personas}}  persona = {{persona}} btntext="{{btntext}}" ></registro-component>
+   
+        </div>
+        <div class="col-lg-8 col-md-8 col-sm-12">
+   
+            <listado-component  personas = {{personas}}  persona = {{persona}} btntext="{{btntext}}" ></listado-component>
+   
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <script>
+    /**
+     * @customElement
+     * @polymer
+     */
+    class UsuariosApp extends Polymer.Element {
+      static get is() { return 'usuarios-app'; }
+      static get properties() {
+        return {
+          personas:{
+            type:Object,
+            notify:true,
+            value:[]
+          },
+          persona:{
+            type:Object,
+            notify:true,
+            value:{}
+          },
+          btntext:{
+            type:String,
+            notify:true,
+            value:"Registrar"
+          }
+        };
+      }
+    }
+
+    window.customElements.define(UsuariosApp.is, UsuariosApp);
+  </script>
+</dom-module>

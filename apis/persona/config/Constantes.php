@@ -1,0 +1,2 @@
+<?php
+define('API_KEY','GuhvQjzvbt5zEEAxKUWfXnjjZu4fmeb2TRy3sGVPUba8DUSFBx2KL2yzVs5NdHjPdus7c68cf6pxK9ZmahEPdzmundrnwxurbcftKbHgkfYmJt3VEf2H2BCaLv7UcsSY');

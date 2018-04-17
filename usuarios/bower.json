@@ -1,0 +1,14 @@
+{
+  "name": "usuarios",
+  "description": "Demo usuarios",
+  "main": "index.html",
+  "dependencies": {
+    "polymer": "Polymer/polymer#^2.0.0",
+    "granite-bootstrap": "LostInBrittany/granite-bootstrap#^4.0.2-beta.2",
+    "promise-polyfill": "PolymerLabs/promise-polyfill#2"
+  },
+  "devDependencies": {
+    "web-component-tester": "Polymer/web-component-tester#^6.0.0",
+    "webcomponentsjs": "webcomponents/webcomponentsjs#^1.0.0"
+  }
+}

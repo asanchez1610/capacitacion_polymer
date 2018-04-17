@@ -1,0 +1,7 @@
+{
+  "name": "usuarios",
+  "short_name": "usuarios",
+  "description": "Demo usuarios",
+  "start_url": "/",
+  "display": "standalone"
+}
